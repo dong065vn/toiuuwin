@@ -67,6 +67,12 @@ Tải và cài đặt Python từ [python.org](https://www.python.org/downloads/
 pip install -r requirements.txt
 ```
 
+**⚠️ Lưu ý về cảnh báo cài đặt:**
+
+Nếu bạn thấy cảnh báo `"Defaulting to user installation because normal site-packages is not writeable"` - đây KHÔNG phải là lỗi! Packages vẫn được cài đặt đúng và ứng dụng sẽ hoạt động bình thường.
+
+Xem chi tiết tại: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+
 ### Bước 3: Chạy ứng dụng
 
 **Chạy bình thường:**
@@ -80,6 +86,17 @@ python win_optimizer.py
 ```bash
 python win_optimizer.py
 ```
+
+## 📚 Tài Liệu Hướng Dẫn
+
+Chúng tôi cung cấp tài liệu đầy đủ để giúp bạn sử dụng tool hiệu quả:
+
+- 📖 **[README.md](README.md)** - Tài liệu chính (bạn đang đọc)
+- 🚀 **[QUICK_START.md](QUICK_START.md)** - Hướng dẫn nhanh cho người mới bắt đầu
+- 🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Xử lý sự cố và các vấn đề thường gặp
+- 📝 **[CHANGELOG.md](CHANGELOG.md)** - Lịch sử phát triển và cập nhật
+
+**Gặp vấn đề?** Kiểm tra [TROUBLESHOOTING.md](TROUBLESHOOTING.md) trước!
 
 ## 🎯 Hướng Dẫn Sử Dụng
 
@@ -179,17 +196,25 @@ netstat -ano                      # Xem kết nối mạng
 
 ## 🐛 Xử Lý Lỗi
 
-### Lỗi "Access Denied":
+### Các lỗi thường gặp:
+
+#### "Defaulting to user installation..."
+- **Đây KHÔNG phải lỗi!** Package được cài vào user folder thay vì system folder
+- Ứng dụng vẫn hoạt động bình thường
+
+#### "Access Denied"
 - **Nguyên nhân**: Thiếu quyền Administrator
 - **Giải pháp**: Chạy ứng dụng với quyền Administrator
 
-### Lỗi "Module not found":
+#### "Module not found"
 - **Nguyên nhân**: Chưa cài đặt thư viện
-- **Giải pháp**: Chạy `pip install -r requirements.txt`
+- **Giải pháp**: Chạy `pip install -r requirements.txt --user`
 
-### Lỗi khi tối ưu:
+#### Lỗi khi tối ưu
 - **Nguyên nhân**: Dịch vụ đang được sử dụng hoặc không tồn tại
 - **Giải pháp**: Xem log chi tiết trong Optimization Log
+
+**📖 Để biết thêm chi tiết về xử lý lỗi, xem [TROUBLESHOOTING.md](TROUBLESHOOTING.md)**
 
 ## 🔄 Khôi Phục
 

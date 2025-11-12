@@ -26,12 +26,16 @@ if %errorlevel% neq 0 (
 
 :: Upgrade pip
 echo [2/4] Upgrading pip...
-python -m pip install --upgrade pip
+python -m pip install --upgrade pip --quiet
 echo.
 
 :: Install requirements
 echo [3/4] Installing required packages...
-pip install -r requirements.txt
+echo.
+echo Note: "Defaulting to user installation" is normal and not an error.
+echo This happens when installing without admin rights.
+echo.
+pip install -r requirements.txt --user --upgrade
 echo.
 
 :: Test installation
