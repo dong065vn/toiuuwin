@@ -2,9 +2,89 @@
 
 Tất cả các thay đổi quan trọng của dự án sẽ được ghi lại trong file này.
 
+## [2.0.0] - 2025-01-12
+
+### 🎨 Thiết Kế Lại Hoàn Toàn Giao Diện
+
+**Giao Diện Mới:**
+- ✅ **Light Theme**: Thay thế dark theme cũ bằng light theme dễ nhìn, không đau mắt
+- ✅ **Microsoft Design Language**: Sử dụng color scheme chuyên nghiệp (#0078D4 blue, #F5F6FA background)
+- ✅ **Card-based Layout**: Bố cục dạng thẻ hiện đại
+- ✅ **Custom ModernButton Class**: Nút bấm tùy chỉnh với hover effects
+- ✅ **Scrollable Options**: Panel tùy chọn có thể scroll
+- ✅ **Better Spacing**: Padding và spacing được cải thiện
+
+**Color Scheme:**
+- Background: #F5F6FA (Light gray - dễ chịu)
+- Primary: #0078D4 (Microsoft blue)
+- Cards: #FFFFFF (White - sạch đẹp)
+- Console: #1E1E1E với text #00FF00
+- Success: #107C10, Warning: #FF8C00, Danger: #E81123
+
+### 🌏 Việt Hóa 100%
+
+**Ngôn Ngữ:**
+- ✅ Toàn bộ giao diện chuyển sang tiếng Việt
+- ✅ Tất cả labels, buttons, headers
+- ✅ Tất cả messages và notifications
+- ✅ Tất cả log outputs
+- ✅ Tooltips và descriptions
+- ✅ Error messages
+
+**Thuật Ngữ:**
+- Sử dụng thuật ngữ tiếng Việt chuẩn
+- Dễ hiểu và phù hợp người Việt
+
+### ✨ Tính Năng Mới (6 Tính Năng!)
+
+- ✅ **🔓 Tắt BitLocker** - Giải mã ổ đĩa (có dialog xác nhận)
+- ✅ **💤 Tắt Hibernate** - Vô hiệu hóa ngủ đông để tiết kiệm dung lượng
+- ✅ **📁 Xóa Windows.old** - Xóa thư mục cài đặt Windows cũ
+- ✅ **🌍 Xóa DNS Cache** - Làm mới bộ nhớ cache DNS
+- ✅ **💿 Tối Ưu SSD** - Chạy lệnh TRIM cho SSD
+- ✅ **🛡️ Tắt Windows Defender** - Tạm thời (có cảnh báo bảo mật nghiêm ngặt)
+
+### 🔧 Cải Thiện Tính Năng
+
+- ✅ **Nút "Bỏ Chọn Tất Cả"** - Thêm nút để uncheck all options
+- ✅ **Better Confirmations** - Dialog xác nhận cho tính năng nguy hiểm
+- ✅ **Safety Warnings** - Cảnh báo rõ ràng cho BitLocker và Defender
+- ✅ **Realtime Updates** - Console log cập nhật realtime
+- ✅ **Thread Safety** - Tối ưu threading để tránh lag
+
+### 📦 Build & Distribution
+
+- ✅ **PyInstaller Support** - Thêm vào requirements.txt
+- ✅ **build.bat** - Script tự động build file EXE
+- ✅ **BUILD_GUIDE.md** - Hướng dẫn chi tiết build EXE
+- ✅ **EXE Ready** - Có thể build thành file exe độc lập
+
+### 📚 Tài Liệu
+
+- ✅ **README.md v2.0** - Viết lại hoàn toàn với thông tin mới
+- ✅ **BUILD_GUIDE.md** - Hướng dẫn build EXE chi tiết
+- ✅ **Pillow Dependency** - Thêm Pillow cho GUI enhancements
+
+### 🎯 UX Improvements
+
+- ✅ **Header Bar** - Header bar đẹp với title và admin status
+- ✅ **Separator Lines** - Visual separators giữa các sections
+- ✅ **Color Tags** - Mã màu cho connection status (established, listening)
+- ✅ **Better Fonts** - Sử dụng Segoe UI toàn bộ
+- ✅ **Hover Effects** - Buttons có hover effect
+- ✅ **Cursor Changes** - Cursor thành hand2 khi hover buttons
+
+### 🐛 Bug Fixes
+
+- ✅ Fixed console output encoding
+- ✅ Fixed threading issues
+- ✅ Improved error handling
+
+---
+
 ## [1.0.0] - 2025-01-12
 
-### 🎉 Phiên bản đầu tiên
+### 🎉 Phiên Bản Đầu Tiên
 
 #### ✨ Tính năng mới
 
