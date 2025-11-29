@@ -226,6 +226,6 @@ Phần mềm này được cung cấp "như hiện tại" không có bảo hành
 
 ---
 
-**© 2024 Windows Optimizer Pro Team. All rights reserved.**
+**© 2025 Windows Optimizer Pro Team. All rights reserved.**
 
 Made with ❤️ in Vietnam
