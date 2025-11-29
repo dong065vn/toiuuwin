@@ -1,11 +1,24 @@
-# Windows Optimizer Pro - Required Dependencies
-# Install with: pip install -r requirements.txt
+# Windows Optimizer Pro v6.0 - Ultimate Edition - Dependencies
+# Advanced system optimization with multiple modules
 
-# System and process utilities
+# Core Windows Management
+wmi>=1.5.1
+pywin32>=306
+
+# System Monitoring & Performance
 psutil>=5.9.0
 
-# Build executable
-pyinstaller>=6.0.0
+# GUI Framework (included with Python)
+# tkinter (built-in)
 
-# Additional GUI enhancements
-pillow>=10.0.0
+# Additional built-in utilities used:
+# - winreg (registry management)
+# - subprocess (command execution)
+# - threading (multi-threading)
+# - datetime (time tracking)
+# - json, csv (data handling)
+# - os, sys (system operations)
+
+# Optional for future enhancements:
+# pillow>=10.0.0  # For advanced image handling
+# requests>=2.31.0  # For network features

@@ -46,3 +46,4 @@ htmlcov/
 # Backup
 *.bak
 *.tmp
+nul

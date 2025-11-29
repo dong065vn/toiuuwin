@@ -1,0 +1,1033 @@
+================================================================================
+           WINDOWS OPTIMIZER PRO v6.0 - ULTIMATE EDITION
+                    HƯỚNG DẪN SỬ DỤNG CHI TIẾT
+================================================================================
+
+📅 Phiên bản: 6.0.0 - Ultimate Edition
+🏢 Nhà phát triển: Windows Optimizer Pro Team
+📧 Hỗ trợ: support@windowsoptimizer.com
+
+================================================================================
+                            MỤC LỤC
+================================================================================
+
+I.   CÀI ĐẶT & KHỞI CHẠY
+II.  GIAO DIỆN DASHBOARD
+III. CÁC MODULE CHI TIẾT
+     1. System Module (Hệ thống)
+     2. System Health Check (Kiểm tra sức khỏe)
+     3. Optimization Module (Tối ưu hóa)
+     4. Startup Manager (Quản lý khởi động)
+     5. Services Manager (Quản lý dịch vụ)
+     6. Privacy Tweaks (Bảo vệ riêng tư)
+     7. Software Manager (Quản lý phần mềm)
+     8. Network Tools (Công cụ mạng)
+     9. Security Module (Bảo mật)
+     10. Files Cleaner (Dọn dẹp file)
+     11. Resources Module (Tài nguyên)
+IV.  CONSOLE OUTPUT
+V.   MẸO & THỦ THUẬT
+VI.  CẢNH BÁO AN TOÀN
+VII. XỬ LÝ SỰ CỐ
+
+================================================================================
+                     I. CÀI ĐẶT & KHỞI CHẠY
+================================================================================
+
+YÊU CẦU HỆ THỐNG:
+-----------------
+• Hệ điều hành: Windows 10/11 (64-bit)
+• Python: 3.8 trở lên
+• RAM: 4GB+ (khuyến nghị)
+• Quyền Administrator (cho một số tính năng)
+
+CÀI ĐẶT:
+--------
+Bước 1: Cài đặt dependencies
+   > pip install -r requirements.txt
+
+Bước 2: Chạy ứng dụng
+   > python app.py
+
+   Hoặc Right-click app.py → Run as Administrator
+
+LƯU Ý QUAN TRỌNG:
+-----------------
+⚠️ Luôn tạo System Restore Point TRƯỚC KHI tối ưu:
+   1. Mở PowerShell as Administrator
+   2. Chạy lệnh:
+      Checkpoint-Computer -Description "Before Optimizer" -RestorePointType "MODIFY_SETTINGS"
+
+⚠️ Backup dữ liệu quan trọng trước khi thao tác
+
+================================================================================
+                      II. GIAO DIỆN DASHBOARD
+================================================================================
+
+DASHBOARD CHÍNH:
+----------------
+• Layout: 4 cột x 3 hàng
+• Tổng số: 11 modules
+• Mỗi card hiển thị:
+  - Icon module
+  - Tên module
+  - Mô tả ngắn
+
+ĐIỀU KHIỂN:
+-----------
+🏠 Dashboard: Quay lại dashboard chính
+🌓 Theme: Chuyển đổi Light/Dark mode
+
+CÁCH DÙNG:
+----------
+1. Click vào module card để mở
+2. Thực hiện các thao tác trong module
+3. Click "Dashboard" để quay lại
+
+================================================================================
+                    III. CÁC MODULE CHI TIẾT
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  1. 💻 SYSTEM MODULE - HỆ THỐNG                                        │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Hiển thị thông tin hệ thống (CPU, RAM, OS, Disk)
+✓ Process Manager đầy đủ
+✓ Realtime monitoring (CPU, RAM, Disk, Network)
+✓ Quản lý processes (End/Suspend/Resume)
+
+CÁCH SỬ DỤNG:
+-------------
+A. Xem Thông Tin Hệ Thống:
+   • Thông tin tự động hiển thị khi mở module
+   • Bao gồm: OS, CPU, RAM, Disk
+
+B. Realtime Monitoring:
+   • Cập nhật mỗi giây
+   • Hiển thị:
+     - CPU usage (%)
+     - RAM usage (%, GB/GB)
+     - Disk usage (%, GB/GB)
+     - Network speed (↓ KB/s | ↑ KB/s)
+     - Số lượng processes đang chạy
+
+C. Process Manager:
+   1. Tìm kiếm process: Gõ tên vào ô "🔍 Tìm kiếm"
+
+   2. Sắp xếp:
+      • CPU: Xem processes dùng CPU nhiều nhất
+      • Memory: Xem processes dùng RAM nhiều nhất
+      • Name: Sắp xếp theo tên
+
+   3. Thao tác:
+      • Chọn process → Click "■ End Process" để kết thúc
+      • Click "⏸️ Suspend" để tạm dừng
+      • Click "▶ Resume" để tiếp tục
+      • Click "📊 Details" để xem chi tiết
+
+   4. Làm mới: Click "Làm mới" để cập nhật danh sách
+
+CẢNH BÁO:
+---------
+⚠️ KHÔNG end các process hệ thống:
+   - explorer.exe (Windows Explorer)
+   - csrss.exe (Client Server Runtime)
+   - winlogon.exe (Windows Logon)
+   - services.exe (Services Control Manager)
+   - svchost.exe (Service Host)
+
+MẸO:
+----
+💡 Nếu máy chậm, sắp xếp theo CPU để tìm ứng dụng gây tốn CPU
+💡 Nếu hết RAM, sắp xếp theo Memory để tìm ứng dụng ngốn RAM
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  2. 🏥 SYSTEM HEALTH CHECK - KIỂM TRA SỨC KHỎE                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Kiểm tra sức khỏe toàn diện hệ thống
+✓ Health scoring (0-100 điểm)
+✓ Phát hiện vấn đề và đưa ra khuyến nghị
+✓ Quick benchmark hiệu suất
+✓ Tự động sửa lỗi
+✓ Dọn dẹp hệ thống
+
+CÁCH SỬ DỤNG:
+-------------
+A. Kiểm Tra Toàn Diện:
+   1. Click "🔍 Kiểm tra toàn diện"
+   2. Đợi 10-30 giây
+   3. Xem kết quả:
+      • Overall health score (💚/💛/🧡/❤️)
+      • Health bars cho từng hạng mục:
+        - CPU Health
+        - Memory Health
+        - Disk Health
+        - Network Health
+        - Security Health
+      • Danh sách vấn đề phát hiện
+      • Khuyến nghị cải thiện
+
+B. Quick Benchmark:
+   1. Click "🚀 Quick Benchmark"
+   2. Test:
+      • CPU speed
+      • Memory availability
+      • Disk space
+   3. Xem kết quả trong card "Kết quả Benchmark"
+
+C. Sửa Lỗi Tự Động:
+   1. Click "🔧 Sửa lỗi tự động"
+   2. Xác nhận
+   3. Ứng dụng sẽ:
+      • Dọn temp files
+      • Chạy Disk Cleanup
+      • Reset network cache
+
+D. Dọn Dẹp Hệ Thống:
+   1. Click "🧹 Dọn dẹp hệ thống"
+   2. Xóa:
+      • Temp files
+      • Prefetch
+      • Recycle Bin
+      • Chạy Disk Cleanup
+
+ĐÁNH GIÁ HEALTH SCORE:
+----------------------
+90-100: 💚 Xuất sắc - Hệ thống hoạt động tối ưu
+70-89:  💛 Tốt - Hệ thống ổn định
+50-69:  🧡 Trung bình - Cần chú ý
+0-49:   ❤️ Cần cải thiện - Có vấn đề nghiêm trọng
+
+MẸO:
+----
+💡 Chạy Health Check định kỳ 1 tuần 1 lần
+💡 Nếu score < 70, đọc khuyến nghị và khắc phục
+💡 Benchmark trước/sau tối ưu để so sánh hiệu quả
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  3. ⚡ OPTIMIZATION MODULE - TỐI ỨU HÓA                                │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Power Management (Ultimate/High Performance)
+✓ Visual Effects optimization
+✓ Gaming Mode & GPU Scheduling
+✓ SSD Optimization (NEW v6.0)
+✓ Storage & Memory optimization
+✓ Windows Update control
+✓ Security features control (CẨN THẬN!)
+
+CÁCH SỬ DỤNG:
+-------------
+BƯỚC 1: Chọn Tùy Chọn
+
+   A. ⚡ Power Management:
+      □ Ultimate Performance Mode - Hiệu suất tối đa (tốn điện)
+      □ High Performance Plan - Hiệu suất cao
+      □ Tắt Hibernation - Tiết kiệm dung lượng ~4GB
+      □ Bật Fast Startup - Khởi động nhanh hơn
+
+   B. 🎨 Visual Effects:
+      □ Giảm Visual Effects - Tăng tốc UI
+      □ Tắt Aero Peek - Tắt preview windows
+      □ Tắt Animations - UI nhanh hơn
+
+   C. 🔍 Search & Indexing:
+      □ Giảm Windows Search - Ít tốn tài nguyên
+      □ Tắt SysMain (SuperFetch) - Giảm disk usage
+
+   D. 🌟 Windows Features:
+      □ Tắt Spotlight - Tắt Windows tips
+      □ Tắt Background Apps - Tiết kiệm RAM & CPU
+      □ Tắt Clipboard History - Tắt lịch sử clipboard
+      □ Tắt Focus Assist - Tắt thông báo
+
+   E. 🎮 Gaming & Performance:
+      □ ✅ Bật Game Mode - Ưu tiên game khi chơi
+      □ ✅ Bật GPU Hardware Scheduling - Giảm input lag
+      □ ✅ Tối ưu Memory Compression - RAM hiệu quả hơn
+
+   F. 💾 Storage Optimization (MỚI v6.0):
+      □ ✅ Bật Storage Sense - Auto cleanup files
+      □ ✅ Tắt NTFS Last Access Time - Giảm disk write
+      □ ✅ Optimize MFT Zone - Tối ưu NTFS
+      □ 💿 Tối ưu SSD - Disable Prefetch/Superfetch cho SSD
+      □ 💿 Bật TRIM cho SSD - Duy trì hiệu suất SSD
+
+   G. 🔄 Windows Update:
+      □ ⚠️ Tắt Windows Update - KHÔNG khuyến khích!
+      □ Xóa Update Cache - Giải phóng dung lượng
+
+   H. 🛡️ Security (⚠️ CẨN THẬN!):
+      □ ⚠️ Tắt Windows Defender - RỦI RO CAO!
+      □ ⚠️ Tắt Windows Firewall - RỦI RO CAO!
+      □ ⚠️ Tắt BitLocker - RỦI RO CAO!
+
+BƯỚC 2: Áp Dụng
+   • Click "Bắt đầu tối ưu"
+   • Đợi hoàn thành
+   • Một số tính năng cần khởi động lại máy
+
+KHÔI PHỤC:
+----------
+• Click "↺ Khôi phục mặc định" để reset power plans
+• Tick "✅ Khôi phục tất cả tính năng" để bật lại:
+  - Defender
+  - Firewall
+  - Update
+  - SysMain
+
+CẢNH BÁO QUAN TRỌNG:
+--------------------
+🔴 KHÔNG BAO GIỜ TẮT (trừ khi có thay thế):
+   • Windows Defender
+   • Windows Firewall
+   • Windows Update
+
+🟡 CÂN NHẮC TRƯỚC KHI TẮT:
+   • SysMain - Giúp tăng tốc load app
+   • Windows Search - Cần cho Start Menu
+   • BitLocker - Mã hóa dữ liệu quan trọng
+
+🟢 AN TOÀN:
+   • Visual Effects
+   • Animations
+   • Background Apps
+   • Clipboard History
+
+KHUYẾN NGHỊ THEO LOẠI MÁY:
+--------------------------
+1. MÁY YẾU / CŨ (HDD):
+   ✅ Giảm Visual Effects
+   ✅ Tắt Animations
+   ✅ Tắt SysMain
+   ✅ High Performance
+   ❌ KHÔNG optimize SSD (vì dùng HDD)
+
+2. MÁY TRUNG BÌNH (SSD):
+   ✅ Tối ưu SSD + TRIM
+   ✅ High Performance
+   ✅ Tắt Background Apps
+   ✅ Tối ưu Memory
+
+3. MÁY GAMING:
+   ✅ Ultimate Performance
+   ✅ Game Mode ON
+   ✅ GPU Scheduling ON
+   ✅ Tối ưu SSD + TRIM
+   ✅ Disable SysMain
+   ❌ GIỮ Visual Effects (cho đẹp)
+
+4. MÁY LÀM VIỆC:
+   ✅ Balanced Performance
+   ✅ GIỮ Windows Search
+   ✅ GIỮ Background Apps cần thiết
+   ✅ Bật Storage Sense
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  4. 🚀 STARTUP MANAGER - QUẢN LÝ KHỞI ĐỘNG                             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Quản lý chương trình tự động chạy khi Windows khởi động
+✓ Hỗ trợ cả Registry và Startup Folder
+✓ Enable/Disable/Delete startup items
+✓ Tìm kiếm và lọc
+✓ Mở file location
+
+CÁCH SỬ DỤNG:
+-------------
+A. Xem Danh Sách Startup:
+   • Module tự động load tất cả startup items từ:
+     - HKCU\Run
+     - HKLM\Run
+     - RunOnce keys
+     - Startup folders (User & Common)
+
+B. Tìm Kiếm:
+   1. Gõ tên chương trình vào ô "🔍 Tìm kiếm"
+   2. Danh sách tự động lọc
+
+C. Vô Hiệu Hóa Startup Item:
+   1. Chọn item trong danh sách
+   2. Click "⛔ Disable"
+   3. Xác nhận
+   4. Item sẽ không chạy khi khởi động Windows
+
+D. Kích Hoạt Lại:
+   1. Chọn item đã disable
+   2. Click "✅ Enable"
+
+E. Xóa Vĩnh Viễn:
+   1. Chọn item
+   2. Click "🗑️ Delete"
+   3. ⚠️ Cẩn thận: Không thể hoàn tác!
+
+F. Mở Vị Trí File:
+   1. Chọn item
+   2. Click "📂 Open Location"
+   3. Windows Explorer sẽ mở và highlight file
+
+G. Tắt Tất Cả (Cẩn thận!):
+   1. Click "Tắt tất cả"
+   2. Xác nhận
+   3. ⚠️ Sẽ disable TẤT CẢ startup items
+
+NÊN DISABLE:
+------------
+✅ Game launchers:
+   • Steam
+   • Epic Games Launcher
+   • Origin
+   • Battle.net
+
+✅ Chat/Communication apps (nếu không dùng ngay):
+   • Discord
+   • Skype
+   • Telegram Desktop
+   • Slack
+
+✅ Update services:
+   • Adobe Update
+   • Java Update
+   • Google Update (nếu không cần)
+
+✅ Cloud sync (nếu không dùng):
+   • Dropbox
+   • OneDrive (nếu không dùng)
+   • Google Drive
+
+KHÔNG NÊN DISABLE:
+------------------
+❌ Antivirus/Security:
+   • Windows Defender
+   • Antivirus của bạn
+   • Firewall
+
+❌ Drivers quan trọng:
+   • Graphics card drivers (NVIDIA/AMD/Intel)
+   • Audio drivers (Realtek)
+   • Touchpad drivers
+
+❌ Cloud backup quan trọng:
+   • Cloud backup service bạn đang dùng
+   • Sync tools cần thiết
+
+❌ System tools:
+   • CTF Loader (Windows language services)
+   • Windows Security
+
+KẾT QUẢ MONG ĐỢI:
+------------------
+• Tốc độ khởi động: Giảm 20-50% thời gian
+• RAM khi idle: Giảm 200-500MB
+• Máy phản hồi nhanh hơn sau boot
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  5. ⚙️ SERVICES MANAGER - QUẢN LÝ DỊCH VỤ                              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Quản lý tất cả Windows Services
+✓ Start/Stop/Restart services
+✓ Thay đổi Startup Type
+✓ Danh sách services được khuyến nghị tắt
+✓ Tối ưu tự động an toàn
+
+CÁCH SỬ DỤNG:
+-------------
+A. Xem Danh Sách Services:
+   • Module tự động load tất cả services
+   • Hiển thị:
+     - Tên service
+     - Tên hiển thị
+     - Trạng thái (Running/Stopped)
+     - Startup Type (Automatic/Manual/Disabled)
+     - Mô tả
+
+B. Lọc Services:
+   • All: Tất cả services
+   • Running: Chỉ services đang chạy
+   • Stopped: Chỉ services đã dừng
+   • Recommended: Services được khuyến nghị tắt để tối ưu
+
+C. Tìm Kiếm:
+   1. Gõ tên service vào ô "Tìm kiếm"
+   2. Tìm theo tên hoặc mô tả
+
+D. Start/Stop Service:
+   1. Chọn service
+   2. Click:
+      • "▶️ Start" - Chạy service
+      • "■ Stop" - Dừng service
+      • "🔄 Restart" - Khởi động lại
+
+E. Thay Đổi Startup Type:
+   1. Chọn service
+   2. Click:
+      • "⚙️ Auto" - Tự động chạy khi boot
+      • "✋ Manual" - Chạy khi cần
+      • "⛔ Disabled" - Vô hiệu hóa
+
+F. Tối Ưu Tự Động:
+   1. Click "🚀 Tối ưu tự động"
+   2. Xác nhận
+   3. Ứng dụng sẽ tự động disable các services không cần thiết
+
+SERVICES NÊN TẮT (AN TOÀN):
+---------------------------
+✅ DiagTrack (Connected User Experiences and Telemetry)
+   • Thu thập dữ liệu sử dụng
+   • Không ảnh hưởng chức năng Windows
+
+✅ dmwappushservice (WAP Push Message Routing)
+   • Chỉ cần cho Windows Store apps
+   • An toàn tắt nếu không dùng Store
+
+✅ lfsvc (Geolocation Service)
+   • Định vị vị trí
+   • Tắt nếu lo ngại privacy
+
+✅ MapsBroker (Downloaded Maps Manager)
+   • Quản lý bản đồ offline
+   • Tắt nếu không dùng Maps app
+
+✅ Xbox services (nếu không chơi game Xbox):
+   • XblAuthManager
+   • XblGameSave
+   • XboxGipSvc
+   • XboxNetApiSvc
+
+✅ Windows Search (nếu không dùng):
+   • WSearch
+   • Cẩn thận: Ảnh hưởng Start Menu search
+
+✅ Print Spooler (nếu không có máy in):
+   • Spooler
+   • Tắt nếu không in ấn
+
+SERVICES KHÔNG NÊN TẮT:
+-----------------------
+❌ Windows Update (wuauserv)
+   • Cập nhật bảo mật quan trọng
+   • Chỉ tắt nếu bạn là expert
+
+❌ Windows Defender:
+   • WinDefend
+   • Bảo vệ khỏi malware
+
+❌ Windows Firewall:
+   • MpsSvc (Windows Firewall)
+   • Bảo vệ mạng
+
+❌ DHCP Client
+   • Dhcp
+   • Cần để kết nối mạng
+
+❌ DNS Client
+   • Dnscache
+   • Cần để truy cập internet
+
+❌ Plug and Play
+   • PlugPlay
+   • Nhận diện thiết bị
+
+❌ Remote Procedure Call (RPC)
+   • RpcSs
+   • Core Windows service
+
+STARTUP TYPE KHUYẾN NGHỊ:
+-------------------------
+• Automatic: Services quan trọng (Defender, Firewall, DHCP, DNS)
+• Manual: Services dùng thỉnh thoảng (Print Spooler)
+• Disabled: Services không cần (Xbox, Telemetry, Maps)
+
+MẸO:
+----
+💡 Dùng filter "Recommended" để xem services nên tắt
+💡 Tối ưu tự động là cách an toàn nhất
+💡 Nếu tắt nhầm, đặt lại "Automatic" và Start
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  6. 🔒 PRIVACY TWEAKS - BẢO VỆ RIÊNG TƯ                               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+CHỨC NĂNG CHÍNH:
+----------------
+✓ Tắt Windows Telemetry & Data Collection
+✓ Chặn Advertising & Tracking
+✓ Tắt Cortana, Bing Search
+✓ Quản lý quyền truy cập ứng dụng
+✓ Tắt Xbox, OneDrive features
+✓ 2 Presets: Maximum Privacy & Balanced
+
+CÁCH SỬ DỤNG:
+-------------
+OPTION 1 - QUICK PRESETS (Khuyến nghị):
+
+A. Privacy Cân Bằng (Khuyến nghị cho đa số người):
+   1. Click "⚖️ Privacy cân bằng"
+   2. Tự động chọn các tùy chọn hợp lý:
+      ✅ Tắt Telemetry
+      ✅ Tắt Advertising ID
+      ✅ Tắt Suggested Content
+      ✅ Tắt Tips
+      ✅ Tắt Location tracking
+      ✅ Tắt Cortana
+      ✅ Tắt Web Search
+      ✅ Tắt Game DVR
+      ❌ GIỮ Camera/Mic (để dùng Zoom, Teams)
+      ❌ GIỮ Location (nếu dùng Maps)
+   3. Click "✅ Áp dụng đã chọn"
+   4. Đợi hoàn thành
+
+B. Privacy Tối Đa (Cho paranoid users):
+   1. Click "🛡️ Tối đa Privacy"
+   2. Tắt TẤT CẢ tracking và data collection
+   3. ⚠️ Một số tính năng sẽ bị ảnh hưởng
+   4. Click "✅ Áp dụng đã chọn"
+
+OPTION 2 - TÙY CHỈNH THỦ CÔNG:
+
+A. 📡 Telemetry & Data Collection:
+   □ Tắt Windows Telemetry (DiagTrack)
+   □ Tắt Connected User Experiences
+   □ Tắt Windows Error Reporting
+   □ Tắt Feedback Notifications
+
+B. 🎯 Advertising & Personalization:
+   □ Tắt Advertising ID
+   □ Tắt Suggested Content (Start Menu)
+   □ Tắt Windows Tips & Suggestions
+   □ Tắt Tailored Experiences
+
+C. 🌐 Network & Location:
+   □ Tắt Location Tracking
+   □ Tắt WiFi Sense
+   □ Tắt Network Discovery (nếu không dùng LAN)
+
+D. 🎤 App Permissions:
+   □ Tắt Camera cho apps
+   □ Tắt Microphone cho apps
+   □ Tắt Notifications cho apps
+   □ Tắt Account Info cho apps
+
+E. 🔍 Cortana & Search:
+   □ Tắt Cortana hoàn toàn
+   □ Tắt Web Search trong Start Menu
+   □ Tắt Bing Search
+
+F. 🎮 Xbox & Gaming:
+   □ Tắt Xbox Live features
+   □ Tắt Game DVR & Game Bar
+
+G. ☁️ Cloud & Sync:
+   □ Tắt OneDrive sync
+   □ Tắt Settings Sync
+
+KHÔI PHỤC MẶC ĐỊNH:
+-------------------
+• Click "↺ Khôi phục mặc định"
+• Bật lại tất cả tính năng privacy về Windows default
+
+KHUYẾN NGHỊ:
+------------
+1. Người dùng phổ thông:
+   → Dùng "Privacy Cân Bằng"
+
+2. Người quan tâm privacy cao:
+   → Dùng "Privacy Tối Đa"
+
+3. Làm việc với video call (Zoom/Teams):
+   → KHÔNG tắt Camera/Microphone permissions
+
+4. Dùng Maps, định vị:
+   → KHÔNG tắt Location
+
+TÁC ĐỘNG CỦA PRIVACY TWEAKS:
+----------------------------
+✅ Lợi ích:
+   • Giảm dữ liệu gửi về Microsoft
+   • Tăng tốc độ (ít background tasks)
+   • Giảm quảng cáo
+   • Bảo vệ thông tin cá nhân
+
+⚠️ Nhược điểm (nếu tắt hết):
+   • Start Menu search không tìm web được
+   • Cortana không hoạt động
+   • Một số app Store không chạy
+   • Không sync settings giữa các máy
+
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  7-11. CÁC MODULE KHÁC                                                 │
+└─────────────────────────────────────────────────────────────────────────┘
+
+7. 🛠️ SOFTWARE MANAGER:
+   • Cài đặt/Gỡ phần mềm phổ biến
+   • Quản lý Windows Features
+   • Gỡ bloatware
+
+8. 🌐 NETWORK TOOLS:
+   • Ping test
+   • DNS flush
+   • IP config
+   • Network reset
+   • WiFi password recovery
+
+9. 🛡️ SECURITY MODULE:
+   • Windows Defender controls
+   • Firewall management
+   • Security scans
+
+10. 📁 FILES CLEANER:
+    • Temp files cleanup
+    • Duplicate file finder
+    • Recycle bin management
+    • Large files scanner
+
+11. 🎁 RESOURCES MODULE:
+    • Office Tool Plus
+    • PITVN AVL Tool
+    • Community Resources
+    • Open tools và folders
+
+================================================================================
+                       IV. CONSOLE OUTPUT
+================================================================================
+
+CHỨC NĂNG:
+----------
+• Hiển thị log realtime của tất cả thao tác
+• Màu sắc:
+  - Xanh: Thành công
+  - Vàng: Cảnh báo
+  - Đỏ: Lỗi
+  - Trắng: Thông tin
+
+TOGGLE ẨN/HIỆN:
+---------------
+• Console mặc định hiển thị
+• Click vào dòng "▼ 📋 Console Output" để ẩn
+• Khi ẩn: Chỉ còn 1 dòng "▶ 📋 Console (Click để hiện)"
+• Click lại để hiện
+
+TIẾT KIỆM KHÔNG GIAN:
+---------------------
+• Hiện: ~232px
+• Ẩn: CHỈ 32px (tiết kiệm 200px!)
+
+LƯU Ý:
+------
+• Log không tự động xóa (giữ trong phiên làm việc)
+• Chuyển module sẽ reset console
+
+================================================================================
+                        V. MẸO & THỦ THUẬT
+================================================================================
+
+1. TỐI ƯU LẦN ĐẦU:
+   ------------------
+   a. Chạy Health Check → Ghi điểm
+   b. Startup Manager → Disable apps không cần
+   c. Services Manager → Tối ưu tự động
+   d. Privacy → Preset Cân bằng
+   e. Optimization → Chọn theo loại máy
+   f. Chạy lại Health Check → So sánh
+
+2. BẢO TRÌ ĐỊNH KỲ (HÀNG TUẦN):
+   -------------------------------
+   a. Health Check → Kiểm tra score
+   b. Files Cleaner → Dọn temp files
+   c. Xem Process Manager → Kiểm tra processes lạ
+
+3. TỐI ƯU CHO GAMING:
+   ---------------------
+   a. Optimization:
+      ✅ Ultimate Performance
+      ✅ Game Mode
+      ✅ GPU Scheduling
+      ✅ SSD optimization
+      ✅ Disable SysMain
+
+   b. Startup Manager:
+      ⛔ Tắt tất cả trừ antivirus
+
+   c. Services:
+      ⛔ Disable Xbox (nếu không chơi Xbox)
+      ⛔ Disable Telemetry
+
+   d. Privacy:
+      ✅ Tắt Game DVR (giảm lag)
+
+4. TIẾT KIỆM PIN (LAPTOP):
+   -------------------------
+   a. Optimization:
+      ❌ KHÔNG dùng Ultimate Performance
+      ✅ Balanced plan
+      ✅ Disable Visual Effects
+
+   b. Startup & Services:
+      ⛔ Tắt apps chạy nền không cần
+
+5. TỐI ƯU CHO MÁY YẾU:
+   ----------------------
+   a. Optimization:
+      ✅ Disable Visual Effects
+      ✅ Disable Animations
+      ✅ Disable Aero
+      ✅ Disable Background Apps
+
+   b. Startup:
+      ⛔ Tắt gần như tất cả
+
+   c. Services:
+      ⛔ Disable SysMain
+      ⛔ Disable Windows Search
+
+================================================================================
+                       VI. CẢNH BÁO AN TOÀN
+================================================================================
+
+🔴 RỦI RO CAO - KHÔNG BAO GIỜ TẮT:
+===================================
+❌ Windows Defender
+   • Bảo vệ khỏi virus, malware
+   • Chỉ tắt nếu có antivirus khác (Kaspersky, Norton, etc.)
+
+❌ Windows Firewall
+   • Bảo vệ kết nối mạng
+   • Chỉ tắt nếu có firewall khác
+
+❌ Windows Update
+   • Cập nhật bảo mật
+   • Chỉ tắt nếu bạn là IT expert
+
+❌ DHCP Client / DNS Client
+   • Cần để kết nối internet
+   • Tắt = mất mạng
+
+🟡 CẨN THẬN - CÂN NHẮC KỸ:
+==========================
+⚠️ SysMain (SuperFetch)
+   • Giúp tăng tốc load app
+   • Tắt nếu: Máy yếu, SSD, RAM ít
+   • Giữ nếu: Máy mạnh, HDD
+
+⚠️ Windows Search
+   • Cần cho Start Menu search
+   • Tắt nếu: Không dùng search, máy yếu
+   • Giữ nếu: Hay dùng Start Menu search
+
+⚠️ Print Spooler
+   • Cần cho in ấn
+   • Tắt nếu: Không có máy in
+   • Giữ nếu: Có máy in
+
+⚠️ BitLocker
+   • Mã hóa ổ đĩa
+   • Tắt = mất bảo mật dữ liệu!
+   • CHỈ tắt nếu không cần mã hóa
+
+🟢 AN TOÀN - TẮT ĐƯỢC:
+======================
+✅ DiagTrack (Telemetry) - An toàn tắt
+✅ Xbox services (nếu không chơi Xbox)
+✅ Cortana
+✅ Windows Tips
+✅ Advertising ID
+✅ Background Apps không cần thiết
+✅ Clipboard History
+✅ OneDrive (nếu không dùng)
+
+QUY TẮC VÀNG:
+=============
+1. ⚠️ Luôn tạo System Restore Point TRƯỚC KHI tối ưu
+2. ⚠️ Chỉ tắt những gì bạn HIỂU
+3. ⚠️ Tối ưu TỪNG BƯỚC, không tất cả cùng lúc
+4. ⚠️ Test sau mỗi bước
+5. ⚠️ Nếu có vấn đề, KHÔI PHỤC ngay
+
+================================================================================
+                       VII. XỬ LÝ SỰ CỐ
+================================================================================
+
+SỰ CỐ 1: MÁY CHẬM SAU KHI TỐI ƯU
+=================================
+NGUYÊN NHÂN:
+• Tắt nhầm service quan trọng
+• Tối ưu quá mức
+
+GIẢI PHÁP:
+1. Mở Optimization → Click "↺ Khôi phục mặc định"
+2. Mở Privacy → Click "↺ Khôi phục mặc định"
+3. Mở Services → Tìm và Start các services đã disable:
+   • DHCP Client → Automatic → Start
+   • DNS Client → Automatic → Start
+   • Windows Search → Automatic → Start (nếu cần)
+4. Khởi động lại máy
+
+Nếu vẫn lỗi:
+5. Restore từ System Restore Point:
+   • Mở System Properties
+   • System Protection tab
+   • System Restore
+   • Chọn restore point trước khi optimize
+
+
+SỰ CỐ 2: KHÔNG KẾT NỐI ĐƯỢC MẠNG
+=================================
+NGUYÊN NHÂN:
+• Tắt DHCP Client hoặc DNS Client
+
+GIẢI PHÁP:
+1. Mở Services Manager
+2. Tìm "DHCP Client"
+   • Set to "Automatic"
+   • Click "Start"
+3. Tìm "DNS Client"
+   • Set to "Automatic"
+   • Click "Start"
+4. Mở Network Tools → Click "Reset Network"
+5. Khởi động lại máy
+
+
+SỰ CỐ 3: START MENU KHÔNG SEARCH ĐƯỢC
+======================================
+NGUYÊN NHÂN:
+• Tắt Windows Search service
+• Tắt Web Search trong Privacy Tweaks
+
+GIẢI PHÁP:
+1. Mở Services Manager
+2. Tìm "Windows Search"
+   • Set to "Automatic"
+   • Click "Start"
+3. Đợi vài phút để rebuild index
+4. Test lại Start Menu search
+
+
+SỰ CỐ 4: WINDOWS UPDATE KHÔNG CHẠY
+===================================
+NGUYÊN NHÂN:
+• Disabled Windows Update service
+
+GIẢI PHÁP:
+1. Mở Services Manager
+2. Tìm "Windows Update" (wuauserv)
+   • Set to "Automatic"
+   • Click "Start"
+3. Hoặc:
+   • Mở Optimization
+   • Tick "✅ Khôi phục tất cả tính năng"
+   • Click "Khôi phục mặc định"
+
+
+SỰ CỐ 5: ỨNG DỤNG BỊ CRASH / KHÔNG CHẠY
+========================================
+NGUYÊN NHÂN:
+• Thiếu quyền truy cập (Camera/Mic)
+• Thiếu service cần thiết
+
+GIẢI PHÁP:
+1. Mở Privacy Tweaks → Click "↺ Khôi phục mặc định"
+2. Restart ứng dụng
+3. Nếu vẫn lỗi:
+   • Mở Services → Start các services liên quan
+   • Reinstall ứng dụng
+
+
+SỰ CỐ 6: MÁY KHÔNG BOOT ĐƯỢC
+=============================
+NGUYÊN NHÂN:
+• Tắt service core quan trọng (hiếm gặp)
+
+GIẢI PHÁP:
+1. Khởi động vào Safe Mode:
+   • Nhấn F8 khi boot (hoặc Shift + Restart)
+   • Chọn "Safe Mode"
+
+2. Trong Safe Mode:
+   • Mở Services (Win + R → services.msc)
+   • Enable lại các services đã disable
+   • Hoặc System Restore
+
+3. Nếu không vào được Safe Mode:
+   • Boot từ USB Windows
+   • Chọn "Repair your computer"
+   • System Restore
+
+
+SỰ CỐ 7: QUÊN ĐÃ TẮT GÌ
+========================
+GIẢI PHÁP:
+• Kiểm tra Console log (nếu còn mở app)
+• Hoặc:
+  1. Services → Filter "Disabled" → Xem danh sách
+  2. Startup → Xem items đã disable
+  3. System Restore về trước đó
+
+================================================================================
+                      THÔNG TIN LIÊN HỆ
+================================================================================
+
+HỖ TRỢ KỸ THUẬT:
+-----------------
+📧 Email: support@windowsoptimizer.com
+🌐 Website: https://windowsoptimizer.com
+💬 Discord: https://discord.gg/windowsoptimizer
+
+BÁO LỖI:
+--------
+🐛 GitHub Issues: https://github.com/windowsoptimizer/issues
+
+YÊU CẦU TÍNH NĂNG:
+------------------
+💡 GitHub Discussions: https://github.com/windowsoptimizer/discussions
+
+ĐÓNG GÓP:
+---------
+🤝 Pull Requests: https://github.com/windowsoptimizer/pulls
+
+================================================================================
+                         KẾT LUẬN
+================================================================================
+
+Windows Optimizer Pro v6.0 Ultimate Edition cung cấp đầy đủ công cụ để tối ưu
+hóa Windows một cách an toàn và hiệu quả.
+
+NGUYÊN TẮC SỬ DỤNG:
+-------------------
+1. ✅ Luôn backup/restore point trước khi tối ưu
+2. ✅ Hiểu rõ từng tùy chọn trước khi bật/tắt
+3. ✅ Tối ưu từng bước, test kỹ
+4. ✅ Nếu không chắc chắn, KHÔNG tắt
+5. ✅ Giữ Defender, Firewall, Update luôn BẬT
+
+KẾT QUẢ MONG ĐỢI:
+-----------------
+✓ Boot time: Giảm 20-50%
+✓ RAM usage: Giảm 200MB-1GB
+✓ Disk usage: Giảm tải
+✓ Privacy: Tăng 70%
+✓ Performance: Tăng 10-30%
+
+Chúc bạn tối ưu thành công! 🚀
+
+================================================================================
+© 2024 Windows Optimizer Pro Team | Version 6.0.0 | Made with ❤️ in Vietnam
+================================================================================
